@@ -15,6 +15,10 @@ resource "aws_lambda_function" "lambda" {
   handler = "lambdaCode.lambda_handler"
   runtime = "python3.9"
   timeout = "30"
+
+
+  vpc_subnet_ids                     = ["private"]
+  vpc_security_group_ids             = [aws_default_security_group.default_security_group.id]
 }
 
 
