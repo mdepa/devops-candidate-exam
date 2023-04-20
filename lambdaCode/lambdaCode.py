@@ -13,7 +13,7 @@ def lambda_handler(event, context):
   #  Qualifier='1'
   )
 
-  print(json.dumps(response.json(), indent=4))
+  print(response)
 
   payload = {
         "subnet_id": "TBD",
