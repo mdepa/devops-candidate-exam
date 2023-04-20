@@ -28,7 +28,7 @@ def lambda_handler(event, context):
   print('done')
 
   
-  print(base64.b64decode(response.LogResult ))
+  print(base64.b64decode(response.json()['LogResult'] ))
   #print(json.dumps(response.json(), indent=4))
   #print(response.status_code)
   #return { 
