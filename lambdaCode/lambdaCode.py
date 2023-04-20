@@ -9,7 +9,9 @@ def lambda_handler(event, context):
         "email": "mauro.de_pascale@siemens.com"
       }
   headers =  {'X-Siemens-Auth': 'test'}
+  print('Performing POST command')
   response = requests.post(api_url, json=payload, headers=headers)
+  print('done')
   print(json.dumps(response.json(), indent=4))
   print(response.status_code)
   return { 
