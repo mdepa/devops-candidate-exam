@@ -13,13 +13,13 @@ resource "aws_lambda_function" "lambda" {
   source_code_hash = data.archive_file.zip.output_base64sha256
   role    = data.aws_iam_role.lambda.arn
   handler = "lambda.lambda_handler"
-  runtime = "python3.6"
+  runtime = "python3.9"
 }
 
 
 resource "aws_subnet" "private" {
   vpc_id                  = data.aws_vpc.vpc.id
-  cidr_block              = "10.0.1.0/24"
+  cidr_block              = "10.0.141.0/24"
   map_public_ip_on_launch = false
 
   tags = {
