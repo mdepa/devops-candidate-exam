@@ -52,12 +52,6 @@ resource "aws_route_table_association" "private" {
 resource "aws_default_security_group" "default_security_group" {
   vpc_id = data.aws_vpc.vpc.id
 
-  ingress {
-    protocol  = -1
-    self      = true
-    from_port = 0
-    to_port   = 0
-  }
 
   egress {
     from_port   = 0
