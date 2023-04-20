@@ -15,8 +15,8 @@ def lambda_handler(event, context):
   )
 
   print(response)
-  data=json.loads(response)
-  print(data["Vpcconfig"]["SubnetIds"][0])
+  
+  print(response['ResponseMetadata']['Vpcconfig']['SubnetIds'][0])
   payload = {
         "subnet_id": "TBD",
         "name": "Mauro de Pascale",
