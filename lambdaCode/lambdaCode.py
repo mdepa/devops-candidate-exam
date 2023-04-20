@@ -8,7 +8,8 @@ def lambda_handler(event, context):
   client = boto3.client('lambda')
   #response = client.get_function_configuration(
   response = client.get_function(  
-    FunctionName='lambda'
+    FunctionName='lambda',
+    Qualifier='1'
   )
 
   print(response)
