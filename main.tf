@@ -2,7 +2,7 @@ provider "archive" {}
 
 data "archive_file" "zip" {
   type        = "zip"
-  source_dir  = "lambda"
+  source_dir  = "lambdaCode"
   output_path = "lambdaCode.zip"
 }
 
@@ -12,7 +12,7 @@ resource "aws_lambda_function" "lambda" {
   filename         = data.archive_file.zip.output_path
   source_code_hash = data.archive_file.zip.output_base64sha256
   role    = data.aws_iam_role.lambda.arn
-  handler = "lambda.lambda_handler"
+  handler = "lambdaCode.lambda_handler"
   runtime = "python3.9"
 }
 
