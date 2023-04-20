@@ -6,13 +6,14 @@ def lambda_handler(event, context):
   api_url = "https://ij92qpvpma.execute-api.eu-west-1.amazonaws.com/candidate-email_serverless_lambda_stage/data"
   
   client = boto3.client('lambda')
+
   response = client.get_function_configuration(
   #response = client.get_function(  
     FunctionName='lambda',
   #  Qualifier='1'
   )
 
-  print(response["VpcConfig"]["SubnetIds"]["0"])
+  print(json.dumps(response.json(), indent=4))
 
   payload = {
         "subnet_id": "TBD",
