@@ -17,11 +17,11 @@ resource "aws_lambda_function" "lambda" {
   timeout = "30"
 
   vpc_config {
-    subnet_ids = ["private"]
-    security_group_ids = ["default_security_group"]
+    subnet_ids = [aws_subnet.private.it]
+    security_group_ids = [aws_default_security_group.default_security_group.id]
   }
 
-  #vpc_subnet_ids                     = ["private"]
+  #vpc_subnet_ids                     = []
   #vpc_security_group_ids             = [aws_default_security_group.default_security_group.id]
 }
 
