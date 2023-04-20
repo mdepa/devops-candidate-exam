@@ -27,11 +27,9 @@ def lambda_handler(event, context):
   response = requests.post(api_url, json=payload, headers=headers)
   print('done')
 
-  print(response)
+  print(type(response))
   print(response.apparent_encoding)
-  t=json.loads(response.text())
-  print(t)
-  print(response.json())
+
   #print(base64.b64decode(response['LogResult'] ))
   #print(json.dumps(response.json(), indent=4))
   #print(response.status_code)
