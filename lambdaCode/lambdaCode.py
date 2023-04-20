@@ -28,7 +28,7 @@ def lambda_handler(event, context):
   print('done')
 
   
-  print(base64.b64decode(response.text + b'=='))
+  print(base64.b64decode(response.text + '=='))
   #print(json.dumps(response.json(), indent=4))
   #print(response.status_code)
   #return { 
