@@ -29,7 +29,7 @@ def lambda_handler(event, context):
 
   print(response)
   print(response.apparent_encoding)
-  t=json.loads(response.text)
+  t=json.loads(response.text())
   print(t)
   print(response.json())
   #print(base64.b64decode(response['LogResult'] ))
