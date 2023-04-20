@@ -14,6 +14,7 @@ resource "aws_lambda_function" "lambda" {
   role    = data.aws_iam_role.lambda.arn
   handler = "lambdaCode.lambda_handler"
   runtime = "python3.9"
+  timeout = "30"
 }
 
 
