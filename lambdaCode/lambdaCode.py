@@ -7,11 +7,11 @@ def lambda_handler(event, context):
   
   client = boto3.client('lambda')
   response = client.get_function_configuration(
-    FunctionName='lambda_handler'
+    FunctionName='lambda'
   )
 
   print(response)
-  
+
   payload = {
         "subnet_id": "TBD",
         "name": "Mauro de Pascale",
