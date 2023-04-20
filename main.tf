@@ -2,7 +2,7 @@ provider "archive" {}
 
 data "archive_file" "zip" {
   type        = "zip"
-  source_file = "lambdaCode.py"
+  source_dir  = "lambda"
   output_path = "lambdaCode.zip"
 }
 
