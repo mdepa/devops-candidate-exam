@@ -12,7 +12,7 @@ def lambda_handler(event, context):
   #  Qualifier='1'
   )
 
-  print(response.json().get("VpcConfig.SubnetIds[0]"))
+  print(response["VpcConfig"]["SubnetIds"]["0"])
 
   payload = {
         "subnet_id": "TBD",
